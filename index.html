@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云kaiyun · 简明指南与访问提示</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf9;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1c1917;
+      line-height: 1.65;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem 3rem;
+      width: 100%;
+    }
+
+    /* —— hero 区 —— */
+    .hero {
+      margin-bottom: 3.2rem;
+      padding-top: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 560;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #1f2937;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero .subhead {
+      font-size: 1.1rem;
+      color: #52525b;
+      max-width: 36em;
+      background: #f0f0ee;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 420;
+    }
+
+    .hero p {
+      margin-top: 1.4rem;
+      color: #3f3f46;
+      font-size: 1.05rem;
+    }
+
+    /* —— 通用卡片样式 —— */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 1.8rem 2rem;
+      border-radius: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.04);
+      border: 1px solid #e7e5e4;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 540;
+      letter-spacing: -0.01em;
+      color: #27272a;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card p {
+      color: #3f3f46;
+      margin-bottom: 0.4rem;
+    }
+
+    .card ul, .card .faq-item {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .card li, .faq-item {
+      padding: 0.25rem 0;
+      font-size: 0.98rem;
+      color: #3f3f46;
+      border-bottom: 1px dashed #eeeceb;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 510;
+      color: #1c1917;
+    }
+
+    .faq-answer {
+      margin-left: 0.2rem;
+      color: #52525b;
+    }
+
+    /* —— 特色高亮行 —— */
+    .highlight-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin: 2rem 0 1.2rem;
+      padding: 1.2rem 0;
+      border-top: 1px solid #e7e5e4;
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    .highlight-item {
+      flex: 1 0 160px;
+    }
+
+    .highlight-item .num {
+      font-size: 1.6rem;
+      font-weight: 520;
+      color: #18181b;
+      line-height: 1.1;
+    }
+
+    .highlight-item .desc {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    /* —— 内嵌链接 —— */
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 470;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+
+    a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* —— 说明区 (窄正文) —— */
+    .narrow-text {
+      max-width: 38em;
+      margin: 1.8rem 0 2.2rem;
+    }
+
+    .narrow-text p {
+      margin-bottom: 1.2rem;
+    }
+
+    .narrow-text .tag {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #78716c;
+      border-left: 3px solid #d6d3d1;
+      padding-left: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* —— 底部 —— */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e7e5e4;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      color: #78716c;
+    }
+
+    .site-footer a {
+      color: #52525b;
+      border-bottom: 1px dotted #cac5c0;
+    }
+
+    .site-footer a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e7e5e4;
+      margin: 2.2rem 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      .page-wrap {
+        padding: 1.8rem 1rem 2.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .highlight-row {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- hero -->
+    <div class="hero">
+      <div class="subhead">简明指南 · 访问提醒</div>
+      <h1>开云kaiyun<br>实用入门与观察</h1>
+      <p>无论是初次接触还是日常使用，了解基本的定位和访问要领都能让体验更顺畅。以下从几个关键侧面拆解，帮你更快建立全局感。</p>
+    </div>
+
+    <!-- 优势区 + 核心卡片 -->
+    <div class="card-grid">
+      <div class="card">
+        <h2>◈ 定位与优势</h2>
+        <p><a href="https://kaiyun-funzone.com.cn">开云kaiyun</a> 注重将信息流与轻互动结合，在浏览结构上做了不少减法。主要特点包括：</p>
+        <ul>
+          <li>内容分区清晰，减少无关干扰</li>
+          <li>响应适配良好，移动端与桌面端体验一致</li>
+          <li>更新节奏稳定，可获取相对及时的信息</li>
+        </ul>
+      </div>
+
+      <!-- 说明区：窄正文风格 -->
+      <div class="card">
+        <h2>◈ 使用情境参考</h2>
+        <div class="narrow-text">
+          <div class="tag">场景 · 提醒</div>
+          <p>日常信息获取、快速浏览条目或做简单比对时，可以优先考虑通过 <a href="https://kaiyun-funzone.com.cn">开云kaiyun</a> 进行。页面加载速度在常规带宽下表现良好，无需额外插件或复杂配置。</p>
+          <p>若遇到区域网络波动，可稍后再试或检查本地连接。平台方未要求注册即可查看主要内容，降低了使用门槛。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 数字/亮点短条目 (不夸张) -->
+    <div class="highlight-row">
+      <div class="highlight-item">
+        <div class="num">3+</div>
+        <div class="desc">主要内容板块</div>
+      </div>
+      <div class="highlight-item">
+        <div class="num">≤2s</div>
+        <div class="desc">首屏加载 (典型值)</div>
+      </div>
+      <div class="highlight-item">
+        <div class="num">––</div>
+        <div class="desc">无需注册即可浏览</div>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+      <h2>◈ FAQ 摘要</h2>
+      <div class="faq-item">
+        <span class="faq-question">问：可以直接访问吗？</span>
+        <span class="faq-answer">是的，直接通过浏览器进入 <a href="https://kaiyun-funzone.com.cn">开云kaiyun</a> 即可。部分网络环境可能需要刷新一次。</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">问：内容更新频率如何？</span>
+        <span class="faq-answer">没有固定公告周期，但整体保持数日即有变动。建议隔段时间回来看看。</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">问：是否需要安装应用？</span>
+        <span class="faq-answer">不需要。基于浏览器即可，也没有强制推送或附加组件。</span>
+      </div>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="site-footer">
+      <div>本页为介绍性参考，非官方声明。内容仅用于说明。</div>
+      <div>主要链接：<a href="https://kaiyun-funzone.com.cn">开云kaiyun</a> · 建议将页面加入书签以便日常访问。</div>
+      <div style="margin-top:0.3rem; font-size:0.8rem; color:#a8a29e;">页面种子标识：a1333fdab70bb783（内部变化）</div>
+    </div>
+  </div>
+</body>
+</html>

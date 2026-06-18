@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://groopword0800.github.io/kaiyun-funzone-com-cn/sitemap.xml
